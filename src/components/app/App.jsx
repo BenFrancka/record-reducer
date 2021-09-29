@@ -1,8 +1,10 @@
-import React from 'react';
-import useRecord from '../../hooks/useRecord';
+import React, { useReducer } from 'react';
+//import useRecord from '../../hooks/useRecord';
+import colorReducer, { initialValue } from '../../hooks/useColorReducer';
 
 export default function App() {
-  const { current, undo, redo, record } = useRecord('#FF0000');
+  //const { current, undo, redo, record } = useRecord('#FF0000');
+  const [state, dispatch] = useReducer(colorReducer, initialValue);
 
   return (
     <>
